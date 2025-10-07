@@ -5,47 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SafeLite Global Careers | Your Career Abroad Starts Here</title>
 <style>
+  /* --- Reset & Base --- */
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-  body { line-height: 1.6; background: #f9f9f9; color: #222; scroll-behavior: smooth; }
+  body { line-height: 1.6; background: #f0fdfa; color: #222; scroll-behavior: smooth; }
   a { text-decoration: none; color: inherit; }
 
-  .btn { background: #0077cc; color: #fff; padding: 12px 25px; border-radius: 5px; display: inline-block; margin: 5px; transition: 0.3s; }
-  .btn:hover { background: #005fa3; }
+  /* --- Buttons --- */
+  .btn { background: linear-gradient(135deg, #00bfa5, #009973); color: #fff; padding: 12px 25px; border-radius: 6px; display: inline-block; margin: 5px; transition: 0.3s; font-weight: 500; }
+  .btn:hover { background: linear-gradient(135deg, #00e6b8, #00a97a); }
 
+  /* --- Container --- */
   .container { max-width: 1000px; margin: auto; padding: 20px; }
 
-  header { text-align: center; padding: 80px 20px; background: #fff; position: relative; }
-  header h1 { font-size: 3rem; margin-bottom: 15px; color: #003366; animation: fadeIn 1s ease forwards; opacity: 0; }
+  /* --- Header / Hero --- */
+  header { text-align: center; padding: 80px 20px; background: #ffffff; border-radius: 12px; }
+  header h1 { font-size: 3rem; margin-bottom: 15px; color: #007961; animation: fadeIn 1s ease forwards; opacity: 0; }
   header p { font-size: 1.2rem; margin-bottom: 25px; animation: fadeIn 1.2s ease forwards; opacity: 0; }
 
-  .sticky-bar { position: fixed; bottom: 0; width: 100%; background: #0077cc; display: flex; justify-content: center; padding: 12px 0; z-index: 1000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
+  /* --- Sticky CTA Bar --- */
+  .sticky-bar { position: fixed; bottom: 0; width: 100%; background: linear-gradient(135deg, #00bfa5, #009973); display: flex; justify-content: center; padding: 12px 0; z-index: 1000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
   .sticky-bar a { color: #fff; margin: 0 15px; font-weight: bold; }
 
-  section { padding: 60px 20px; background: #fff; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+  /* --- Sections --- */
+  section { padding: 60px 20px; background: #ffffff; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
   section.show { opacity: 1; transform: translateY(0); }
 
-  h2 { font-size: 2rem; margin-bottom: 30px; color: #003366; text-align: center; }
+  h2 { font-size: 2rem; margin-bottom: 30px; color: #007961; text-align: center; }
   ul { list-style: none; margin-bottom: 20px; }
   li { margin-bottom: 15px; }
 
+  /* --- Success Path / Steps --- */
   .steps-container { position: relative; padding-left: 50px; margin-top: 40px; }
-  .steps-container::before { content: ''; position: absolute; top: 0; left: 20px; width: 4px; height: 100%; background: #ddd; }
+  .steps-container::before { content: ''; position: absolute; top: 0; left: 20px; width: 4px; height: 100%; background: #ccece6; }
 
   .step { position: relative; margin-bottom: 50px; }
-  .step-circle { position: absolute; left: -2px; top: 0; width: 40px; height: 40px; border-radius: 50%; background: #0077cc; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; transition: transform 0.3s; }
+  .step-circle { position: absolute; left: -2px; top: 0; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; transition: transform 0.3s; }
   .step:hover .step-circle { transform: scale(1.2); }
-  .step-content { margin-left: 60px; padding: 10px 20px; background: #f1f5f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+
+  .step-content { margin-left: 60px; padding: 12px 20px; background: #e0f7f3; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
   .step:hover .step-content { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
 
-  .step-circle:nth-child(1) { background: #ff6f61; }
-  .step-circle:nth-child(2) { background: #ffb347; }
-  .step-circle:nth-child(3) { background: #fcd34d; }
-  .step-circle:nth-child(4) { background: #6ee7b7; }
-  .step-circle:nth-child(5) { background: #3b82f6; }
-  .step-circle:nth-child(6) { background: #9333ea; }
+  /* --- Step Colors --- */
+  .step-circle:nth-child(1) { background: #00bfa5; }
+  .step-circle:nth-child(2) { background: #00d1b5; }
+  .step-circle:nth-child(3) { background: #00e6c6; }
+  .step-circle:nth-child(4) { background: #33f2d1; }
+  .step-circle:nth-child(5) { background: #66f8df; }
+  .step-circle:nth-child(6) { background: #99ffee; }
 
+  /* --- Footer --- */
   footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #666; }
-  footer a { color: #0077cc; }
+  footer a { color: #007961; }
 
   @media (max-width: 768px) { .steps-container { padding-left: 30px; } }
 
@@ -80,9 +90,9 @@
       <li>2️⃣ <strong>Pay Retainer:</strong> Submit a $99 non-refundable retainer to begin your job search.</li>
       <li>3️⃣ <strong>Get Matched:</strong> We connect you with real, verified job offers abroad.</li>
     </ul>
-    <div class="sample-buttons">
+    <div style="text-align:center;">
       <a class="btn" href="#">Apply Here</a>
-      <a class="btn" href="#">Check Out Opportunities</a>
+      <a class="btn" href="#">Check Opportunities</a>
     </div>
   </section>
 
